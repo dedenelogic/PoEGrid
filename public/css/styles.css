@@ -1,0 +1,66 @@
+body {
+	background: #000 url(https://pathofexile.gamepedia.com/media/9/98/Bg.jpg) no-repeat top center;
+	background-size: cover;
+	margin:0;
+	padding:0;
+}
+
+
+#banner {
+    background: rgba(12, 12, 12, 0.85);
+}
+	@font-face {
+		font-family: 'Fontin-Regular';
+		src: url('./Fontin-Regular.ttf') format('truetype');
+	}
+	:root {
+		--bannerHeight: 75px;
+	}
+	#banner img {
+		height: var(--bannerHeight);
+	}
+	#banner span {
+		font-family: 'Fontin-Regular',Verdana,Arial,Helvetica,sans-serif;
+		color: #dfcf99;
+		font-size: 3em; 
+		position: relative;
+		top: -18px;
+	}
+	#banner button { 
+		top: -27px;
+		position: relative;
+		margin-left: 56px;
+	}
+
+#grid {
+	margin-top: 20px;
+}
+	#grid_table {
+		margin: 0 auto;
+		background-image: url("../img/grid.png");
+	}
+	:root {
+		--cellSize: 49px;
+	}
+	.cell {
+		border: solid rgba(200, 200, 200, 0.1) 1px;
+
+		position: relative;
+		top:0px;
+		left:0px;
+
+		height: var(--cellSize);
+		width: var(--cellSize);
+		margin-right: -1px;
+		margin-left: -1px;
+		margin-bottom: -2px;
+	}
+	.cellInput {
+		width: var(--cellSize);
+		height: var(--cellSize);
+		background-color : rgba(12, 12, 12, 0.25); 
+		border: none;
+		color: white;
+		font-size: 1.2em;
+	}
+

@@ -1,1 +1,37 @@
-<h2>HW</h2>
+<!DOCTYPE html>
+<head>
+
+    <title>PoE Pricing Grid</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+    
+</head>
+<body>
+
+<div id="banner">
+    <img src="./img/logo.png" alt="poe logo" />
+    <span>PoE Pricing Grid</span>
+    <button id="getPostButton">Generate Forum Post</button>
+</div>
+
+<section id="gridContent">
+
+    <!-- STASH GRID -->
+    <div id="grid"></div> 
+
+</section>
+
+<section id="postContent">
+
+    <!-- Forum Post -->
+    <div id="post"></div> 
+
+</section>
+
+<script type="application/javascript" src="./js/grid.js"></script>
+<script>
+    (function() {
+        setGrid();
+    })();
+</script>
+</body>
+</html>
