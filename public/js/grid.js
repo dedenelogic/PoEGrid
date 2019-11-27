@@ -9,7 +9,7 @@ function setGrid() {
 	// Grid Parent
 	const gridParent = document.getElementById('grid');
 	// Grid Table
-	const gridTable = document.getElementById('grid_table');
+	const gridTable = document.getElementById('gridTable');
 
 	// Cell Rows
 	for(var _y=0; _y < y; _y++) {

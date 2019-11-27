@@ -32,9 +32,10 @@ body {
 		top: -18px;
 	}
 	#getPostButton { 
-		top: -27px;
+		top: 0;
 		position: relative;
-		margin-left: 56px;
+		margin-left: 0; 
+		margin: 5px;
 	}
 
 	.poeButton {
@@ -64,7 +65,12 @@ body {
 #grid {
 	margin-top: 20px;
 }
-	#grid_table {
+	#gridControls {
+		width: 638px;
+		margin: 0 auto;
+	}
+
+	#gridTable {
 		margin: 0 auto;
 		background-image: url("../img/grid.png");
 	}
@@ -94,8 +100,9 @@ body {
 	}
 	#clearGridButton {
 		position: relative;
-		left: 70px;
-		top: 20px;
+		left: 0;
+		top: 0; 
+		margin: 5px;
 	}
 	#clearGridButton .tooltiptext {
 		visibility: hidden;
@@ -117,8 +124,8 @@ body {
 	  #clearGridButton .tooltiptext::after {
 		content: "";
 		position: relative;
-		top: 100%;
-		left: 50%;
+		top: 30px;
+		left: -32%;
 		margin-left: -5px;
 		border-width: 5px;
 		border-style: solid;
@@ -137,6 +144,7 @@ body {
 	#post textarea {
 		display: block;
 		margin: 0 auto;
+		margin-bottom: 40px;
 		background: rgba(12, 12, 12, .95);
 		color: white;
 	}
