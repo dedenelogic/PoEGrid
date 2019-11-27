@@ -8,20 +8,17 @@ function setGrid() {
 
 	// Grid Parent
 	const gridParent = document.getElementById('grid');
-
 	// Grid Table
-	const gridTable = document.createElement('table');
-	gridTable.id = 'grid_table';
-	gridParent.appendChild(gridTable);
+	const gridTable = document.getElementById('grid_table');
 
 	// Cell Rows
-	for(var _y=0; _y<y; _y++) {
+	for(var _y=0; _y < y; _y++) {
 		const gridRow = document.createElement('tr');
 		gridRow.className = ('row');
 		gridTable.appendChild(gridRow);
 
 		// Columns
-		for(var _x=0; _x<x; _x++) {
+		for(var _x=0; _x < x; _x++) {
 
 			// Cells
 			const cell = document.createElement('td');
@@ -34,7 +31,8 @@ function setGrid() {
 			const cellInput = document.createElement('input');
 			cellInput.type = ('text');
 			cellInput.className = ('cellInput');
-			cellInput.id = (`${_y}-${_x}`);
+			cellInput.setAttribute("y",_y);
+			cellInput.setAttribute("x",_x);
 
 			cellDiv.appendChild(cellInput);
 			gridRow.appendChild(cell);
@@ -45,27 +43,34 @@ function setGrid() {
 /**
  * Function to get and display the forum post
  */
-document.getElementById('getPostButton').onclick = function(){
+document.getElementById('getPostButton').onclick = function() {
 
 	const cellInput = document.getElementsByClassName('cellInput');
-
-	const postTextDiv = document.getElementById('post');
+	var postText = [];
 
 	for(var i=0; i < cellInput.length; i++) {
 		var thisInputValue = cellInput[i].value;
 		if(thisInputValue !== "") {
 
-			const yx = cellInput[i].id.split("-");
-			const y = yx[0];
-			const x = yx[1];
+			const y = cellInput[i].getAttribute("y");
+			const x = cellInput[i].getAttribute("x");
 
-			const postItem = document.createElement('p');
-			postItem.textContent = (`[linkItem location="Stash6" league="Blight" x="${x}" y="${y}"]`);
-			postTextDiv.appendChild(postItem);
-
-			const postPrice = document.createElement('p');
-			postPrice.textContent = (`~b/o ${thisInputValue} chaos`);
-			postTextDiv.appendChild(postPrice);
+			postText.push(`[linkItem location="Stash6" league="Blight" x="${x}" y="${y}"]`);
+			postText.push(`~b/o ${thisInputValue} chaos`);
 		}
 	}
+
+	postText = postText.join("\n");
+	document.getElementById('postTextArea').value = postText;
 };
+
+
+/**
+ * Function to clear the grid on button push
+ */
+document.getElementById('clearGridButton').onclick = function() {
+	const cellInput = document.getElementsByClassName('cellInput');
+	for(var i=0; i < cellInput.length; i++) {
+		cellInput[i].value = "";
+	}
+}

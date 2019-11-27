@@ -13,23 +13,52 @@ body {
 		font-family: 'Fontin-Regular';
 		src: url('./Fontin-Regular.ttf') format('truetype');
 	}
+	@font-face {
+		font-family: 'Fontin-SmallCaps';
+		src: url('./Fontin-SmallCaps.ttf') format('truetype');
+	}
 	:root {
 		--bannerHeight: 75px;
+		--bannerTextColor: #dfcf99;
 	}
 	#banner img {
 		height: var(--bannerHeight);
 	}
 	#banner span {
 		font-family: 'Fontin-Regular',Verdana,Arial,Helvetica,sans-serif;
-		color: #dfcf99;
+		color: var(--bannerTextColor);
 		font-size: 3em; 
 		position: relative;
 		top: -18px;
 	}
-	#banner button { 
+	#getPostButton { 
 		top: -27px;
 		position: relative;
 		margin-left: 56px;
+	}
+
+	.poeButton {
+		box-shadow: 3px 4px 6px 1px #503622;
+		background:linear-gradient(to bottom, #9e816a 5%, #68462d 100%);
+		background-color:#9e816a;
+		border-radius:5px;
+		border:1px solid #23170f;
+		display:inline-block;
+		cursor:pointer;
+		color:var(--bannerTextColor);
+		font-family: 'Fontin-SmallCaps',Verdana,Arial,Helvetica,sans-serif;
+		font-size:17px;
+		padding:5px 10px;
+		text-decoration:none;
+		text-shadow:0px 1px 0px #7e5739;
+	}
+	.poeButton:hover {
+		background:linear-gradient(to bottom, #68462d 5%, #9e816a 100%);
+		background-color:#68462d;
+	}
+	.poeButton:active {
+		position:relative;
+		top:1px;
 	}
 
 #grid {
@@ -63,4 +92,59 @@ body {
 		color: white;
 		font-size: 1.2em;
 	}
+	#clearGridButton {
+		position: relative;
+		left: 70px;
+		top: 20px;
+	}
+	#clearGridButton .tooltiptext {
+		visibility: hidden;
+		width: 120px;
+		background-color: #555;
+		color: #fff;
+		text-align: center;
+		border-radius: 6px;
+		padding: 5px 0;
+		position: absolute;
+		z-index: 1;
+		bottom: 125%;
+		left: 50%;
+		margin-left: -60px;
+		opacity: 0;
+		transition: opacity 0.3s;
+	  }
+	  
+	  #clearGridButton .tooltiptext::after {
+		content: "";
+		position: relative;
+		top: 100%;
+		left: 50%;
+		margin-left: -5px;
+		border-width: 5px;
+		border-style: solid;
+		border-color: #555 transparent transparent transparent;
+	  }
+	  
+	  #clearGridButton:hover .tooltiptext {
+		visibility: visible;
+		opacity: 1;
+	  }
+
+#post {
+	margin-top: 24px;
+	width: 100%;
+}
+	#post textarea {
+		display: block;
+		margin: 0 auto;
+		background: rgba(12, 12, 12, .95);
+		color: white;
+	}
+	:root {
+		--blueText: #9cdcfe;
+		--redText: #f48771;
+		--greenText: #b5cea8;
+		--whiteText: #d4d4d4;
+	}
+	
 
