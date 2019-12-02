@@ -34,6 +34,12 @@ function setGrid() {
 			cellInput.setAttribute("y",_y);
 			cellInput.setAttribute("x",_x);
 
+			const cellImage = document.createElement('div');
+			cellImage.className = ('cellImage');
+			cellImage.setAttribute("y",_y);
+			cellImage.setAttribute("x",_x);
+
+			cellDiv.appendChild(cellImage);
 			cellDiv.appendChild(cellInput);
 			gridRow.appendChild(cell);
 		}

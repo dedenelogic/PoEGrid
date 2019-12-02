@@ -156,3 +156,15 @@ body {
 	}
 	
 
+#stashModal {
+	font-family: Arial, Helvetica, sans-serif;
+}
+	#stashModal textarea {
+		margin: 15px;
+	}
+	.modal a.close-modal {
+		background-image: url("../img/x.png");
+	}
+	.cellImage {
+		
+	}
