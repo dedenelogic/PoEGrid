@@ -97,6 +97,12 @@ body {
 		border: none;
 		color: white;
 		font-size: 1.2em;
+		z-index: 999;
+	}
+	.cellImage {
+		background-repeat: no-repeat;
+		/* transform: translateY(-49px); */
+		z-index: -999;
 	}
 	#clearGridButton {
 		position: relative;
@@ -164,7 +170,4 @@ body {
 	}
 	.modal a.close-modal {
 		background-image: url("../img/x.png");
-	}
-	.cellImage {
-		
 	}

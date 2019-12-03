@@ -3,6 +3,7 @@
  */
 function setGrid() {
 	// PoE Stash is 12 x 12
+	// stash slot space numbers start at 0,0
 	x = 12;
 	y = 12;
 
@@ -39,8 +40,10 @@ function setGrid() {
 			cellImage.setAttribute("y",_y);
 			cellImage.setAttribute("x",_x);
 
+			
 			cellDiv.appendChild(cellImage);
 			cellDiv.appendChild(cellInput);
+			
 			gridRow.appendChild(cell);
 		}
 	}
