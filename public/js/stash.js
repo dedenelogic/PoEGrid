@@ -16,28 +16,37 @@ function setStashUrl() {
  * Triggers on Import Stash button confirmation
  */
 document.getElementById('importStashButton').onclick = function() {
-    // Get stash items from my logged in PoE stash
+    // Get stash items from my logged-in PoE stash
     var responseText = document.getElementById("stashTextArea").value;
     var responseObj = JSON.parse(responseText);
     var items = responseObj.items;
-    
-    const cellSize = 49;
+    var tab = responseObj.tabs;
 
     for(var i = 0; i < items.length; i++) {
         // get item data
         var url = items[i].icon;
         var y = items[i].y;
         var x = items[i].x;
-        var h = items[i].h;
-        var w = items[i].w;
+        const league = items[i].league;
+        const name = items[i].name;
+        const typeLine = items[i].typeLine;
 
         // set image to input on grid
-        var inputs = document.getElementsByClassName("cellImage");
-        for(var j = 0; j < inputs.length; j++) {
-            if(inputs[j].getAttribute('y') === `${y}` && inputs[j].getAttribute('x') === `${x}`) {
-                inputs[j].style.height = `${cellSize*h}px`;
-                inputs[j].style.width = `${cellSize*w}px`;
-                inputs[j].style.backgroundImage = `url("${url}")`;
+        var cellImages = document.getElementsByClassName("cellInput");
+        for(var j = 0; j < cellImages.length; j++) {
+            if(cellImages[j].getAttribute('y') === `${y}` && cellImages[j].getAttribute('x') === `${x}`) {
+                // set image icon
+                cellImages[j].style.backgroundImage = `url("${url}")`;
+
+                // set tooltip
+                var itemToolTip = document.createElement("span");
+                itemToolTip.className = (`tooltiptext`);
+                var separator = ` - `;
+                if(name == "" || typeLine == "") {
+                    var separator = ``;
+                }
+                itemToolTip.innerHTML = (`${name}${separator}${typeLine}`);
+                cellImages[j].parentElement.appendChild(itemToolTip);
             }
         }
     }

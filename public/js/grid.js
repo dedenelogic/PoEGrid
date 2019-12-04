@@ -35,15 +35,7 @@ function setGrid() {
 			cellInput.setAttribute("y",_y);
 			cellInput.setAttribute("x",_x);
 
-			const cellImage = document.createElement('div');
-			cellImage.className = ('cellImage');
-			cellImage.setAttribute("y",_y);
-			cellImage.setAttribute("x",_x);
-
-			
-			cellDiv.appendChild(cellImage);
 			cellDiv.appendChild(cellInput);
-			
 			gridRow.appendChild(cell);
 		}
 	}
@@ -73,6 +65,12 @@ document.getElementById('getPostButton').onclick = function() {
 	document.getElementById('postTextArea').value = postText;
 };
 
+/**
+ * Import values from post Text
+ */
+document.getElementById('importPostButton').onclick = function() {
+	// TODO - parse forum text and place values on grid
+}
 
 /**
  * Function to clear the grid on button push

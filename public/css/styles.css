@@ -34,8 +34,6 @@ body {
 	#getPostButton { 
 		top: 0;
 		position: relative;
-		margin-left: 0; 
-		margin: 5px;
 	}
 
 	.poeButton {
@@ -52,6 +50,8 @@ body {
 		padding:5px 10px;
 		text-decoration:none;
 		text-shadow:0px 1px 0px #7e5739;
+		margin-left: 5px; 
+		margin-bottom: 7px; 
 	}
 	.poeButton:hover {
 		background:linear-gradient(to bottom, #68462d 5%, #9e816a 100%);
@@ -79,11 +79,7 @@ body {
 	}
 	.cell {
 		border: solid rgba(200, 200, 200, 0.1) 1px;
-
 		position: relative;
-		top:0px;
-		left:0px;
-
 		height: var(--cellSize);
 		width: var(--cellSize);
 		margin-right: -1px;
@@ -97,20 +93,14 @@ body {
 		border: none;
 		color: white;
 		font-size: 1.2em;
-		z-index: 999;
-	}
-	.cellImage {
+		position: absolute;
+		background-size: contain;
 		background-repeat: no-repeat;
-		/* transform: translateY(-49px); */
-		z-index: -999;
 	}
 	#clearGridButton {
 		position: relative;
-		left: 0;
-		top: 0; 
-		margin: 5px;
 	}
-	#clearGridButton .tooltiptext {
+	.tooltiptext {
 		visibility: hidden;
 		width: 120px;
 		background-color: #555;
@@ -127,7 +117,7 @@ body {
 		transition: opacity 0.3s;
 	  }
 	  
-	  #clearGridButton .tooltiptext::after {
+	  .tooltiptext::after {
 		content: "";
 		position: relative;
 		top: 30px;
@@ -139,6 +129,10 @@ body {
 	  }
 	  
 	  #clearGridButton:hover .tooltiptext {
+		visibility: visible;
+		opacity: 1;
+	  }
+	  .cell:hover .tooltiptext {
 		visibility: visible;
 		opacity: 1;
 	  }
