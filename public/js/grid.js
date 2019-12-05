@@ -69,13 +69,79 @@ document.getElementById('getPostButton').onclick = function() {
  * Import values from post Text
  */
 document.getElementById('importPostButton').onclick = function() {
-	// TODO - parse forum text and place values on grid
+	const postTextAreaText = document.getElementById("postTextArea").value;
+	var lines = postTextAreaText.split('\n');
+
+	var foundPrices = [];
+
+	var foundItem = false;
+	var y = null;
+	var x = null;
+	var price = null;
+	try {
+		lines.forEach(line => {
+
+			var itemRegex = /\[linkItem location="\w+" league="\w+" x="\d+" y="\d+"]/gis;
+			var priceRegex = /~b\/o \d+ \w+/gis;
+			var xRegex = /x="\d+"/g;
+			var yRegex = /y="\d+"/g;
+			var valueRegex = /\d+/g;
+	
+			if(line.match(itemRegex)) {
+	
+				var getX = xRegex.exec(line)[0];
+				var getY = yRegex.exec(line)[0];
+	
+				x = valueRegex.exec(getX)[0];
+				// have to rest valueRegex
+				valueRegex = /\d+/g;
+				y = valueRegex.exec(getY)[0];
+	
+				foundItem = true;
+			}
+			else if(foundItem && line.match(priceRegex)) {
+				price = valueRegex.exec(line)[0];
+			}
+	
+			if(foundItem && y && x && price) {
+	
+				foundPrices.push({
+					'y' : y,
+					'x' : x,
+					'price' : price
+				});
+	
+				// reset item values
+				foundItem = false;
+				y = null;
+				x = null;
+				price = null;
+			}
+		});	
+
+		ClearGrid();
+		foundPrices.forEach(price => {
+			const cellInput = document.getElementsByClassName('cellInput');
+			for(var i=0; i < cellInput.length; i++) {
+				if(cellInput[i].getAttribute('x') == `${price.x}` && cellInput[i].getAttribute('y') == `${price.y}`) {
+					cellInput[i].value = price.price;
+				}
+			}
+		});
+
+	} catch (error) {
+		console.log("Try not sucking...", error);
+	}
+
 }
 
 /**
  * Function to clear the grid on button push
  */
 document.getElementById('clearGridButton').onclick = function() {
+	ClearGrid();
+}
+function ClearGrid() {
 	const cellInput = document.getElementsByClassName('cellInput');
 	for(var i=0; i < cellInput.length; i++) {
 		cellInput[i].value = "";
