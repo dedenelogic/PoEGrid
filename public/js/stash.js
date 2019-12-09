@@ -1,7 +1,7 @@
 /**
  * Function to set the stash grid overlay
  */
-function setStashUrl() {
+function SetStashUrl() {
     // must be logged into PoE with username
     const userName = `edenmind`;
     // Stash numbers start at 0

@@ -1,7 +1,7 @@
 /**
  * Function to set the stash grid overlay
  */
-function setGrid() {
+function RenderGrid() {
 	// PoE Stash is 12 x 12
 	// stash slot space numbers start at 0,0
 	x = 12;
