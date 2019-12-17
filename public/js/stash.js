@@ -4,9 +4,10 @@
 function SetStashUrl() {
     // must be logged into PoE with username
     const userName = `edenmind`;
+    const league = `Metamorph`;
     // Stash numbers start at 0
     const stashNUmber = 5;
-    const myStashUrl = `https://www.pathofexile.com/character-window/get-stash-items?league=Blight&tabs=1&tabIndex=${stashNUmber}&accountName=${userName}`;
+    const myStashUrl = `https://www.pathofexile.com/character-window/get-stash-items?league=${league}&tabs=1&tabIndex=${stashNUmber}&accountName=${userName}`;
     // set href
     document.getElementById('myStashUrl').href = myStashUrl;
 }

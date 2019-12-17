@@ -46,6 +46,7 @@ function RenderGrid() {
  */
 document.getElementById('getPostButton').onclick = function() {
 
+	const league = `Metamorph`;
 	const cellInput = document.getElementsByClassName('cellInput');
 	var postText = [];
 
@@ -55,8 +56,9 @@ document.getElementById('getPostButton').onclick = function() {
 
 			const y = cellInput[i].getAttribute("y");
 			const x = cellInput[i].getAttribute("x");
+			
 
-			postText.push(`[linkItem location="Stash6" league="Blight" x="${x}" y="${y}"]`);
+			postText.push(`[linkItem location="Stash6" league="${league}" x="${x}" y="${y}"]`);
 			postText.push(`~b/o ${thisInputValue} chaos`);
 		}
 	}
