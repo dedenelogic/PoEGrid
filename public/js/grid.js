@@ -121,7 +121,7 @@ document.getElementById('importPostButton').onclick = function() {
 			}
 		});	
 
-		ClearGrid();
+		ClearGrid(true, false);
 		foundPrices.forEach(price => {
 			const cellInput = document.getElementsByClassName('cellInput');
 			for(var i=0; i < cellInput.length; i++) {
@@ -141,11 +141,17 @@ document.getElementById('importPostButton').onclick = function() {
  * Function to clear the grid on button push
  */
 document.getElementById('clearGridButton').onclick = function() {
-	ClearGrid();
+	ClearGrid(true, true);
 }
-function ClearGrid() {
+function ClearGrid(clearNumbers, clearPictures) {
 	const cellInput = document.getElementsByClassName('cellInput');
 	for(var i=0; i < cellInput.length; i++) {
-		cellInput[i].value = "";
+		if(clearNumbers) {
+			cellInput[i].value = "";
+		}
+		if(clearPictures) {
+			cellInput[i].style.backgroundImage = `none`;
+		}
+		
 	}
 }

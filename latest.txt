@@ -1,16 +1,8 @@
-[linkItem location="Stash6" league="Metamorph" x="0" y="0"]
-~b/o 20 chaos
 [linkItem location="Stash6" league="Metamorph" x="2" y="0"]
-~b/o 10 chaos
-[linkItem location="Stash6" league="Metamorph" x="9" y="0"]
-~b/o 5 chaos
-[linkItem location="Stash6" league="Metamorph" x="10" y="0"]
-~b/o 5 chaos
-[linkItem location="Stash6" league="Metamorph" x="11" y="0"]
 ~b/o 2 chaos
 [linkItem location="Stash6" league="Metamorph" x="10" y="1"]
-~b/o 7 chaos
-[linkItem location="Stash6" league="Metamorph" x="11" y="1"]
-~b/o 50 chaos
-[linkItem location="Stash6" league="Metamorph" x="0" y="3"]
-~b/o 2 chaos
+~b/o 15 chaos
+[linkItem location="Stash6" league="Metamorph" x="2" y="3"]
+~b/o 17 chaos
+[linkItem location="Stash6" league="Metamorph" x="10" y="10"]
+~b/o 10 chaos
